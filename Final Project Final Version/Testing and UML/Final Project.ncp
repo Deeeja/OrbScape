@@ -1,0 +1,190 @@
+<Project>
+  <Name>Final Project</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Diagram</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Story</Name>
+        <Access>Public</Access>
+        <Location left="576" top="183" />
+        <Size width="222" height="228" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Item[] Inventory</Member>
+        <Member type="Field">private Map map</Member>
+        <Member type="Field">private Form1 form</Member>
+        <Member type="Constructor">public Story(Form1 form)</Member>
+        <Member type="Method">public void Interact(Point xy, int dir)</Member>
+        <Member type="Method">private void AddToInventory(Item item)</Member>
+        <Member type="Method">public void Dialog(Point xy)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Map</Name>
+        <Access>Public</Access>
+        <Location left="1085" top="210" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Image[,] area</Member>
+        <Member type="Field">private Story story</Member>
+        <Member type="Field">private Form1 form</Member>
+        <Member type="Field">private int[] mazePath</Member>
+        <Member type="Constructor">public Map(Story story, Form1 form)</Member>
+        <Member type="Method">public void Move(Point xy, int dir)</Member>
+        <Member type="Method">private void FillMap()</Member>
+        <Member type="Method">private int Maze()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Item</Name>
+        <Access>Public</Access>
+        <Location left="857" top="643" />
+        <Size width="331" height="200" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private string name</Member>
+        <Member type="Field">private string description</Member>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">private Image img</Member>
+        <Member type="Property">string AllProperties { get; set; }</Member>
+        <Member type="Constructor">public Item(string name, string description, int id, Image img)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Key</Name>
+        <Access>Public</Access>
+        <Location left="830" top="997" />
+        <Size width="385" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Story story</Member>
+        <Member type="Method">public void OpenDoor()</Member>
+        <Member type="Constructor">public Key(string name, string description, int id, Image img, Story story)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Character</Name>
+        <Access>Public</Access>
+        <Location left="327" top="705" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string CharacterName</Member>
+        <Member type="Field">private Form1 form</Member>
+        <Member type="Field">private Story story</Member>
+        <Member type="Field">private Map map</Member>
+        <Member type="Constructor">public Character(Form1 form, Map map, Story story)</Member>
+        <Member type="Method">public void LoadCharacter()</Member>
+        <Member type="Method">public void SaveCharacter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Form1</Name>
+        <Access>Public</Access>
+        <Location left="241" top="106" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1199</X>
+          <Y>185</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1155</X>
+          <Y>185</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
